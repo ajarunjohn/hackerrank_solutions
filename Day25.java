@@ -1,13 +1,15 @@
- public static Node removeDuplicates(Node head) {
-      //Write your code here
-        Node current = head;
-        
-        while (current != null && current.next != null) {
-            while (current.next != null && current.data == current.next.data){
-                current.next = current.next.next;
-            }
-            current = current.next;
-        }
-
-        return head;
-    }
+ import math
+t=input()
+def isPrime(data):
+    if data < 2:
+        return False
+    v=int(math.sqrt(data))
+    for i in range(2,v+1):
+        if data%i==0:
+            return False;
+    return True;
+for i in range(t):
+    if isPrime(input()):
+        print "Prime"
+    else:
+        print "Not prime"
